@@ -1,0 +1,23 @@
+{
+  "name": "@ersinfotech/slush-react",
+  "version": "0.0.0",
+  "description": "slush-react",
+  "main": "slushfile.js",
+  "dependencies": {
+    "gulp": "~3.6.2",
+    "gulp-conflict": "~0.1.1",
+    "gulp-install": "~0.1.5",
+    "gulp-rename": "~1.2.0",
+    "gulp-template": "~3.0.0",
+    "inquirer": "~0.5.0",
+    "coffee-script": "~1.7.1",
+    "underscore.string": "~2.3.3",
+    "underscore": "~1.6.0",
+    "bluebird": "~2.2.2"
+  },
+  "keywords": [
+    "slushgenerator"
+  ],
+  "author": "",
+  "license": "MIT"
+}

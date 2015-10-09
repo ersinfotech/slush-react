@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title><%= name %></title>
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="<%= '\<%= htmlWebpackPlugin.files.chunks.login.css[0] %\>' %>" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="login-bg">
+      <div class="container">
+        <div class="row login-container">
+          <div class='col-lg-4 col-md-4'>
+            <div class="form aniamted bounceIn">
+              <div class='login'>
+                <h2><%= name %></h2>
+                <form id="login-form">
+                  <input placeholder='Email' type='text' name="email" id="email">
+                  <input placeholder='Password' type='password' name="password" id="password" class="margin-bottom-lg">
+                  <div class="margin-bottom-lg text-right">
+                    <a id="forget" href="/forget.html">忘記密碼？</a>
+                  </div>
+                  <div class="error hide">
+                    用戶名 / 密碼錯誤
+                  </div>
+                  <button class="margin-bottom-lg">登陸</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="<%= '\<%= htmlWebpackPlugin.files.chunks.login.entry %\>' %>"></script>
+
+  </body>
+</html>

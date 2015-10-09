@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title><%= name %></title>
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="<%= '\<%= htmlWebpackPlugin.files.chunks.login.css[0] %\>' %>" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="header">
+      <div class="container clearfix">
+        <div class="title pull-left">
+          <img class="pull-left" src="favicon.ico" />
+          <h3 class="pull-left"><%= name %></h3>
+          <h4
+           class="pull-left">找回密碼</h4
+           >
+
+        </div>
+        <div class="pull-right">
+          <a id="back" href="/login.html">返回登入界面</a>
+        </div>
+      </div>
+    </div>
+    <div class="forget-container">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="panle-title">請輸入你需要重置登錄密碼的賬戶名</div>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6">
+              <form id="password-form">
+                <div class="margin-bottom-lg">
+                  <strong>賬戶名(電郵地址)</strong>
+                </div>
+                <input placeholder='Email' type='text' name="email" id="email-wanted" class="form-control margin-bottom-lg">
+                <button class="btn btn-success margin-bottom-lg">發送請求</button>
+                <div class="success hide">
+                  新密碼已發送至閣下的電子郵箱，請前往電子郵箱查看。
+                </div>
+                <div class="error hide">
+                  賬號不存在
+                </div>
+              </form>
+            </div>
+            <div class="col-sm-3"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-style4">Copyright &copy; 2015 易研信息科技有限公司 版權所有</div>
+
+    <script src="<%= '\<%= htmlWebpackPlugin.files.chunks.login.entry %\>' %>"></script>
+
+  </body>
+</html>

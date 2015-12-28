@@ -17,7 +17,7 @@ module.exports = {
       __dirname + '/node_modules',
       __dirname,
     ],
-    extensions: ['', '.js', '.coffee'],
+    extensions: ['', '.js'],
   },
   module: {
     loaders: [{

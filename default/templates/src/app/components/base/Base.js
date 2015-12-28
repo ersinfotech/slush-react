@@ -1,10 +1,9 @@
 import React, {Component, PropTypes} from 'react';
-import className from 'classnames';
 
 import Header from 'components/header/Header';
 import Sidebar from 'components/sidebar/Sidebar';
 
-import {sidebar, main} from './base.css';
+import {Row, Col} from 'antd';
 
 export default class Base extends Component {
 
@@ -13,21 +12,18 @@ export default class Base extends Component {
   }
 
   render() {
+    const {children} = this.props;
     return (
       <div>
-        <div className="header">
-          <div className="container">
-            <Header />
-          </div>
-        </div>
-        <div className="container clearfix margin-top-lg">
-          <div className={className('pull-left margin-right-lg', sidebar)}>
+        <Row>
+          <Col span="4">
             <Sidebar />
-          </div>
-          <div className={className('pull-left', main)}>
-            {this.props.children}
-          </div>
-        </div>
+          </Col>
+          <Col span="20">
+            <Header />
+            {children}
+          </Col>
+        </Row>
       </div>
     );
   }

@@ -1,18 +1,16 @@
 import React from 'react';
 import {Provider} from 'react-redux';
-import {ReduxRouter} from 'redux-react-router';
+import {ReduxRouter} from 'redux-router';
 
 import 'font-awesome/css/font-awesome.css';
-import '@ersinfotech/bootstrap/css/yeti.css';
+import 'antd/lib/index.css';
 
 import configureStore from './store/configureStore';
 
 const store = configureStore();
 
-export default (
+module.exports = (
   <Provider store={store}>
-    {() =>
-      <ReduxRouter />
-    }
+    <ReduxRouter />
   </Provider>
 );

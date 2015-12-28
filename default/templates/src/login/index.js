@@ -1,6 +1,5 @@
 import $ from 'jquery';
 import config from 'config';
-import Cookies from 'js-cookie';
 
 import '@ersinfotech/bootstrap/css/yeti.css';
 import './login.css';
@@ -18,7 +17,6 @@ $(() => {
       },
       success: (data) => {
         localStorage.access_token = data.access_token;
-        Cookies.set('accessToken', data.access_token);
         const match = window.location.href.match(/\?path=(.*)/);
         if (match) {
           window.location.replace('/#' + match[1]);

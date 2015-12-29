@@ -1,5 +1,8 @@
 import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
+import {Row, Col, Icon} from 'antd';
+
+import {container, info} from './header.css'
 
 @connect(
   state => ({
@@ -20,18 +23,22 @@ export default class Header extends Component {
   render() {
     const {me} = this.props;
     return (
-      <div>
-        Header
+      <Row type="flex" align="middle" className={container}>
+        <Col span="2">
+          <h1>
+            Header
+          </h1>
+        </Col>
 
-        <span className="pull-right">
+        <Col span="4" offset="18" className={info}>
           {me.username}
           {' '}
           <a onClick={::this.handleLogoutClick}>
-            <i className="fa fa-sign-out"/>
+            <Icon type="logout" />
           </a>
-        </span>
+        </Col>
 
-      </div>
+      </Row>
     );
   }
 }

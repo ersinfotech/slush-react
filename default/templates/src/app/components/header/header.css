@@ -1,0 +1,8 @@
+.container {
+  height: 64px;
+}
+
+.info {
+  text-align: right;
+  padding-right: 10px;
+}

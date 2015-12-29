@@ -3,6 +3,7 @@
   "plugins": [
     "transform-runtime",
     "transform-decorators-legacy",
+    "lodash",
     "antd"
   ],
   "env": {

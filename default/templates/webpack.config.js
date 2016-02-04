@@ -26,7 +26,7 @@ module.exports = {
       exclude: /node_modules/,
     }, {
       test: /\.css$/,
-      loaders: ['style', 'css?modules'],
+      loaders: ['style', 'css'],
       include: /components/,
     }, {
       test: /\.(jpe?g|png|gif|svg|ico)/i,

@@ -1,43 +1,39 @@
 import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
-import {Row, Col, Icon} from 'antd';
+import {Row, Col, Icon, Tooltip} from 'antd';
 
-import {container, info} from './header.css'
+import {signout} from 'actions/meActions';
+
+import './header.css'
 
 @connect(
-  state => ({
-    me: state.me,
-  }),
+  null,
 )
 export default class Header extends Component {
 
-  static propTypes = {
-    me: PropTypes.object,
-  }
-
-  handleLogoutClick() {
-    delete localStorage.access_token;
-    location.replace('/login.html');
-  }
+  handleLogoutClick = () => {
+    const {dispatch} = this.props;
+    dispatch(signout());
+  };
 
   render() {
-    const {me} = this.props;
+    const {children} = this.props;
     return (
-      <Row type="flex" align="middle" className={container}>
-        <Col span="2">
-          <h1>
-            Header
-          </h1>
-        </Col>
+      <Row type="flex" align="middle" className="header">
 
-        <Col span="4" offset="18" className={info}>
-          {me.username}
-          {' '}
-          <a onClick={::this.handleLogoutClick}>
-            <Icon type="logout" />
+        <Col span="20">{children}</Col>
+        <Col span="4" className="clearfix">
+          <a className="pull-right margin-left-lg" onClick={this.handleLogoutClick}>
+            <Tooltip placement="bottom" title="登出">
+              <Icon type="logout" />
+            </Tooltip>
+          </a>
+          <a className="pull-right margin-left-lg">
+            <Tooltip placement="bottom" title="消息">
+              <Icon type="notification" />
+            </Tooltip>
           </a>
         </Col>
-
       </Row>
     );
   }

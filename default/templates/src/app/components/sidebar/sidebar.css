@@ -1,0 +1,108 @@
+.sidebar {
+  height: 100%;
+  background: #1F5AA3;
+  position: relative;
+}
+.sidebar .title {
+  height: 60px;
+  width: 230px;
+  padding-left: 20px;
+  line-height: 60px;
+  color: #fff;
+  /*text-align: center;*/
+  background: #1671BD;
+  /*box-shadow: 0px 0px 10px rgba(0,0,0,0.2);*/
+  margin-bottom: 30px;
+}
+.sidebar .title i {
+  font-size: 25px;
+}
+.sidebar .title span {
+  font-weight: 700;
+  font-size: 20px;
+}
+/*========== cover antd menu style ==========*/
+.sidebar .ant-menu {
+  border: none;
+  background: transparent;
+}
+.sidebar .ant-menu .ant-menu-item {
+  font-size: 15px;
+  color: #fff;
+  padding-left: 20px;
+}
+.sidebar .ant-menu .ant-menu-item a {
+  color: #fff;
+  display: inline-block;
+  width: 100%;
+}
+.sidebar .ant-menu .ant-menu-item.ant-menu-item-active {
+  background: #276BBF;
+}
+.sidebar .ant-menu .ant-menu-item.ant-menu-item-selected{
+  background: #0B366A;
+}
+/*===========================================*/
+/*========== cover antd menu style ==========*/
+
+
+/*===========================================*/
+/*.sidebar .menu {
+  list-style: none;
+}
+.sidebar .menu li {
+  height: 40px;
+  line-height: 40px;
+  padding-left: 20px;
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+  width: 230px;
+}
+.sidebar .menu li:hover {
+  background: #276BBF;
+}*/
+
+.sidebar .avatar {
+  color: #fff;
+  position: absolute;
+  bottom: 30px;
+  width: 230px;
+  /*background: #1D74BD;*/
+  /*text-align: center;*/
+  padding: 5px 20px;
+  transition: all .3s;
+  cursor: pointer;
+  vertical-align: middle;
+}
+.sidebar .avatar span {
+  line-height: 45px;
+}
+.sidebar .avatar:hover {
+  background: #0B366A;
+}
+.sidebar .avatar img {
+  height: 36px;
+  width: 36px;
+  margin-top: 5px;
+  border-radius: 40px;
+}
+
+.collapse .sidebar .avatar {
+  padding-left: 12px;
+}
+
+.sidebar .collapse-btn {
+  background: #1D74BD;
+  text-align: center;
+  height: 30px;
+  line-height: 30px;
+  color: #fff;
+  cursor: pointer;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.collapse .sidebar span {
+  display: none;
+}

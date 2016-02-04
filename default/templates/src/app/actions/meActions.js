@@ -1,16 +1,16 @@
-import config from 'config';
+export const PARSE_ME = 'PARSE_ME';
+export const LOAD_ME = 'LOAD_ME';
+export const SIGNOUT = 'SIGNOUT';
 
-import request from 'helpers/superagent';
+export const parseMe = () => ({
+  type: PARSE_ME,
+});
 
-const {access_token} = localStorage;
+export const loadMe = (data) => ({
+  type: LOAD_ME,
+  data,
+});
 
-export function fetchMe() {
-  return () => {
-    return request.get(config.eadmin.baseUrl + '/account/me')
-      .query({
-        access_token,
-      })
-      .endAsync()
-      .get('body');
-  };
-}
+export const signout = () => ({
+  type: SIGNOUT,
+});

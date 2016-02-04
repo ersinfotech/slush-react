@@ -33,7 +33,8 @@ gulp.task 'default', ->
 
     new Promise (resolve, reject) ->
       gulp.src __dirname + '/templates/**', {dot: true}
-      .pipe template answers
+      .pipe template answers,
+        interpolate:  /<%=([\s\S]+?)%>/g
       .pipe rename (path) ->
         path.basename = path.basename.replace /^__/, ''
         path

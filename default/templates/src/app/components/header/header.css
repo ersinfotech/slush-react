@@ -1,8 +1,44 @@
-.container {
-  height: 64px;
+.header {
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  background: #fefefe;
+  box-shadow: 0px 0px 1px rgba(0,0,0,0.1);
+  padding-left: 250px;
+  padding-right: 20px;
+  position: fixed;
+  right: 0;
+  transition: all .3s;
+  z-index: 998;
 }
-
-.info {
-  text-align: right;
-  padding-right: 10px;
+.header .title {
+  font-size: 20px;
+}
+.header i {
+  font-size: 10px;
+  font-weight: 100;
+}
+.header a i {
+  font-size: 16px;
+  font-weight: 100;
+}
+.header input {
+  outline: none;
+  border: none;
+  height: 25px;
+  line-height: 15px;
+  width: 30%;
+  padding: 0;
+  transition: all .3s;
+  border-bottom: 1px solid #fff;
+  color: #ddd;
+  font-size: 10px;
+}
+.header input:focus {
+  border-bottom: 1px solid #aaa;
+  width: 80%;
+  color: #aaa;
+}
+.collapse .header {
+  padding-left: 80px;
 }

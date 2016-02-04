@@ -1,26 +1,22 @@
-import {createStore, applyMiddleware, combineReducers, compose} from 'redux';
-import thunk from 'redux-thunk';
-import {reduxReactRouter} from 'redux-router';
-import createHistory from 'history/lib/createHashHistory';
+import {createStore, applyMiddleware, compose} from 'redux';
+import {syncHistory} from 'react-router-redux'
+import {combineReducers, install} from '@jarvisaoieong/redux-loop';
+import createLogger from '@jarvisaoieong/redux-logger';
 
 import routes from '../routes';
 import * as reducers from '../reducers';
 
-let middlewares = [thunk];
-
-if (process.env.NODE_ENV === 'development') {
-  const logger = require('redux-logger');
-  middlewares = [...middlewares, logger];
-}
-
-const finalCreateStore = compose(
-  applyMiddleware(...middlewares),
-  reduxReactRouter({routes, createHistory}),
-)(createStore);
-
-export default function configureStore(initialState) {
+export default function configureStore({history, initialState}) {
+  const reduxRouterMiddleware = syncHistory(history);
   const reducer = combineReducers(reducers);
-  const store = finalCreateStore(reducer, initialState);
+
+  const store = createStore(reducer, initialState, compose(
+    applyMiddleware(reduxRouterMiddleware),
+    install(),
+    process.env.NODE_ENV === 'development'
+      ? applyMiddleware(createLogger({collapsed: true}))
+      : applyMiddleware(),
+  ));
 
   if (process.env.NODE_ENV === 'development' && module.hot) {
     module.hot.accept('../reducers', () => {
@@ -32,4 +28,3 @@ export default function configureStore(initialState) {
 
   return store;
 }
-

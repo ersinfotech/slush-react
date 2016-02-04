@@ -1,29 +1,51 @@
 import React, {Component, PropTypes} from 'react';
+import {connect} from 'react-redux';
+import _ from 'lodash';
+import classnames from 'classnames';
 
-import Header from 'components/header/Header';
 import Sidebar from 'components/sidebar/Sidebar';
+import Header from 'components/header/Header';
 
-import {Row, Col} from 'antd';
+import {init} from 'actions/initActions';
 
+import './base.css';
+
+@connect(
+  (state) => ({
+    isCollapse: _.get(state, 'sidebar.isCollapse'),
+  })
+)
 export default class Base extends Component {
 
   static propTypes = {
-    children: PropTypes.element,
+    isCollapse: PropTypes.bool,
+    header: PropTypes.element,
+    sidebar: PropTypes.element,
+    body: PropTypes.element,
+  };
+
+  componentDidMount() {
+    const {dispatch} = this.props;
+    dispatch(init());
   }
 
   render() {
-    const {children} = this.props;
+    const {isCollapse, header, sidebar, body} = this.props;
     return (
-      <div>
-        <Row>
-          <Col span="4">
-            <Sidebar />
-          </Col>
-          <Col span="20">
-            <Header />
-            {children}
-          </Col>
-        </Row>
+      <div className={classnames({collapse: isCollapse})}>
+        <div className="left-block">
+          <Sidebar>
+            {sidebar}
+          </Sidebar>
+        </div>
+        <div className="right-block">
+          <Header>
+            {header}
+          </Header>
+          <div className="main-container">
+            {body}
+          </div>
+        </div>
       </div>
     );
   }

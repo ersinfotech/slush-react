@@ -5,6 +5,6 @@ import Home from 'components/home/Home';
 
 export default (
   <Route component={Base}>
-    <Route path="/" component={Home} />
+    <Route path="/" components={{body: Home}} />
   </Route>
 );

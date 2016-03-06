@@ -1,24 +1,19 @@
 {
-  "apps": [{
-    "name": "<%= name %>",
-    "script": "index.js",
-    "log_date_format": "YYYY-MM-DD HH:mm:ss"
-  }],
   "deploy" : {
-    "stage" : {
+    "staging" : {
       "user" : "deploy",
-      "host" : "stage.ers.local",
+      "host" : "staging.ers.local",
       "ref"  : "origin/master",
       "repo" : "git@gitlab.ers.local:<%= repo %>.git",
       "path" : "~/<%= name %>",
       "post-deploy" : "npm i && npm run build"
     },
-    "productoin" : {
+    "production" : {
       "user" : "deploy",
       "host" : "web.ers.local",
       "ref"  : "origin/master",
       "repo" : "git@gitlab.ers.local:<%= repo %>.git",
-      "path" : "~/<%= name %>",
+      "path" : "/webdata/www/<%= name %>",
       "post-deploy" : "npm i && npm run build"
     }
   }

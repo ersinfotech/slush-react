@@ -16,10 +16,6 @@ gulp.task 'default', ->
       message: 'App name'
       default: -> path.basename process.cwd()
     ,
-      type: 'input'
-      name: 'repo'
-      message: 'Repo name. E.g. repoGroup/repoName'
-    ,
       type: 'confirm'
       name: 'moveon'
       message: 'Continue?'

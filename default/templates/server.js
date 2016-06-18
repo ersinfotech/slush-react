@@ -6,6 +6,7 @@ var app = express();
 var compiler = webpack(webpackConfig);
 
 app.use(require('webpack-dev-middleware')(compiler, {
+  noInfo: true,
   stats: {
     colors: true,
   },

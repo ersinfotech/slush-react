@@ -304,3 +304,12 @@ body {
 .panel, .form-control, .btn {
   border-radius: 0 !important;
 }
+
+#isAutoSignIn {
+  display: inline;
+  width: inherit;
+}
+
+.pull-left {
+  float: left;
+}

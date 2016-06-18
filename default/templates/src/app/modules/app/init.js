@@ -2,10 +2,7 @@ import {loop, Effects} from 'redux-loop';
 
 import {init as meInit} from 'modules/me';
 
-const {
-  model: meModel,
-  effect: meEffect,
-} = meInit();
+const [meModel, meEffect] = meInit();
 
 export default () => {
   return loop({

@@ -12,7 +12,7 @@ const Header = ({
     <Row type="flex" align="middle" className="header">
       <Col span="20">{children}</Col>
       <Col span="4" className="clearfix">
-        <a className="pull-right margin-left-lg" onClick={() => dispatch(meActions.signout())}>
+        <a className="pull-right margin-left-lg" onClick={() => dispatch(meActions.signOut())}>
           <Tooltip placement="bottom" title="登出">
             <Icon type="logout" />
           </Tooltip>

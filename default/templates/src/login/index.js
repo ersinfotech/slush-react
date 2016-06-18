@@ -1,5 +1,6 @@
 import $ from 'jquery';
 import config from 'config';
+import base64 from 'base-64';
 
 import '@ersinfotech/bootstrap/css/yeti.css';
 import './login.css';
@@ -17,6 +18,11 @@ $(() => {
       },
       success: (data) => {
         localStorage.access_token = data.access_token;
+        if($('#isAutoSignIn').is(':checked')) {
+          localStorage.email = $('#email').val();
+          localStorage.password = base64.encode($('#password').val());
+          localStorage.isAutoSignIn = true;
+        }
         const match = window.location.href.match(/\?path=(.*)/);
         if (match) {
           window.location.replace('/#' + match[1]);

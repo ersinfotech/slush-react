@@ -1,10 +1,10 @@
+import 'helpers/polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
 import {hashHistory as history} from 'react-router';
 import createStore from 'helpers/createStore'
 import {Component as App, reducer, init} from 'modules/app';
-
 import 'font-awesome/css/font-awesome.css';
 import 'antd/lib/index.css';
 

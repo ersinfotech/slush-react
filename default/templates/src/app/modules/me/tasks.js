@@ -1,8 +1,7 @@
-import Promise from 'bluebird';
-import {signoutSuccess} from './actions';
+import {signOutSuccess} from './actions';
 
-export const signoutTask = () => {
+export const signOut = () => {
   delete localStorage.access_token;
   location.replace('/login.html');
-  return Promise.resolve(signoutSuccess());
+  return signOutSuccess();
 }

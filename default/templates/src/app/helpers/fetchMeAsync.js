@@ -1,5 +1,5 @@
 import config from 'config';
-import request from 'helpers/superagent';
+import request from 'superagent';
 
 export default () => {
   const {access_token} = localStorage;
@@ -7,9 +7,7 @@ export default () => {
     .query({
       access_token,
     })
-    .endAsync()
-    .get('body')
-    .then((me) => {
-      localStorage.me = JSON.stringify(me);
+    .then((res) => {
+      localStorage.me = JSON.stringify(res.body);
     });
 };

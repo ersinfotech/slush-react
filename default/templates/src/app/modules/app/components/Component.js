@@ -3,9 +3,7 @@ import {Router, Route} from 'react-router';
 import {Container as Base} from 'modules/base';
 import {Component as Home} from 'modules/home';
 
-const App = ({
-  history,
-}) => {
+const App = ({history}) => {
   return (
     <Router history={history}>
       <Route component={Base}>

@@ -1,6 +1,6 @@
 var webpack = require('webpack');
 var merge = require('@ersinfotech/merge');
-
+var ProgressBarPlugin = require('progress-bar-webpack-plugin');
 var webpackConfig = require('./webpack.config');
 
 process.env.NODE_ENV = 'development';
@@ -28,5 +28,6 @@ module.exports = merge(webpackConfig, {
         NODE_ENV: '"development"',
       },
     }),
+    new ProgressBarPlugin,
   ],
 });

@@ -1,5 +1,5 @@
 import config from 'config';
-import request from 'helpers/superagent';
+import request from 'superagent';
 
 export default ({
   email,
@@ -13,10 +13,7 @@ export default ({
       password,
       client_id: config.clientId,
     })
-    .endAsync()
-    .get('body')
-    .get('access_token')
-    .then((accessToken) => {
-      localStorage.access_token = accessToken;
+    .then((res) => {
+      localStorage.access_token = res.body.access_token;
     });
 };
